@@ -16,7 +16,7 @@ const AdminDashboard = () => {
 
   const fetchDashboardData = async () => {
     try {
-      const response = await axios.get('https://resort-backend-oa7j.onrender.com/api/admin/dashboard');
+      const response = await axios.get('https://relaxee.onrender.com/api/admin/dashboard');
       if (response.data.success) {
         setDashboardData(response.data.data);
       }

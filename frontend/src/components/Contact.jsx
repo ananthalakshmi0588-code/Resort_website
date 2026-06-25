@@ -17,7 +17,7 @@ const Contact = () => {
   useEffect(() => {
     const fetchContactInfo = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/contacts');
+        const response = await axios.get('https://relaxee.onrender.com/api/contacts');
         if (response.data.success) {
           setContactInfo(response.data.data);
         }

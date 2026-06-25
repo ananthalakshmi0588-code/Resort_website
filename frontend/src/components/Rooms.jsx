@@ -16,7 +16,7 @@ const Rooms = () => {
   useEffect(() => {
     const fetchRooms = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/rooms');
+        const response = await axios.get('https://relaxee.onrender.com/api/rooms');
         if (response.data.success) {
           setRooms(response.data.data);
         }

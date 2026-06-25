@@ -15,7 +15,7 @@ const Packages = () => {
   useEffect(() => {
     const fetchPackages = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/packages');
+        const response = await axios.get('https://relaxee.onrender.com/api/packages');
         if (response.data.success) {
           setPackages(response.data.data);
         }

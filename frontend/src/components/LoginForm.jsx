@@ -18,7 +18,7 @@ const LoginForm = () => {
     setLoading(true);
     
     try {
-      const response = await axios.post('http://localhost:5000/api/users/login', formData);
+      const response = await axios.post('https://relaxee.onrender.com/api/users/login', formData);
       
       // Your backend returns: { success: true, message: 'Login successful', token, data: user }
       if (response.data.success) {

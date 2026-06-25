@@ -44,7 +44,7 @@ const ReviewForm = ({ onClose, onReviewSubmit }) => {
     setMessage('');
 
     try {
-      const response = await axios.post('http://localhost:5000/api/reviews', formData);
+      const response = await axios.post('https://relaxee.onrender.com/api/reviews', formData);
       
       if (response.data.success) {
         setMessage('Review submitted successfully! It will be visible after approval.');

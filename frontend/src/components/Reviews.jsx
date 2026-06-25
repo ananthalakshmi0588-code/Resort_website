@@ -15,7 +15,7 @@ const Reviews = () => {
   const fetchReviews = useCallback(async () => {
     try {
       setLoading(true);
-      const response = await axios.get('http://localhost:5000/api/reviews/approved');
+      const response = await axios.get('https://relaxee.onrender.com/api/reviews/approved');
       if (response.data.success) {
         const approvedReviews = response.data.data;
         setReviews(approvedReviews);

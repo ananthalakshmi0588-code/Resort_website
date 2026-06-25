@@ -51,7 +51,7 @@ const BookingForm = ({ room, package: pkg, onClose, onBookingSuccess }) => {
         });
       } else {
         // Handle room booking
-        response = await axios.post('http://localhost:5000/api/bookings', {
+        response = await axios.post('https://relaxee.onrender.com/api/bookings', {
           guestName: formData.guestName,
           email: formData.email,
           phone: formData.phone,

@@ -27,7 +27,7 @@ const BookingsManagement = () => {
 
   const updateBookingStatus = async (bookingId, status) => {
     try {
-      const response = await axios.put(`http://localhost:5000/api/admin/bookings/${bookingId}/status`, {
+      const response = await axios.put(`https://relaxee.onrender.com/api/admin/bookings/${bookingId}/status`, {
         status
       });
 

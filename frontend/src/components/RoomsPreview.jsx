@@ -13,7 +13,7 @@ const RoomsPreview = () => {
   useEffect(() => {
     const fetchRooms = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/rooms');
+        const response = await axios.get('https://relaxee.onrender.com/api/rooms');
         if (response.data.success) {
           // Show only 3 featured rooms on homepage
           setRooms(response.data.data.slice(0, 3));

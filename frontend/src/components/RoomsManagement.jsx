@@ -153,7 +153,7 @@ const RoomsManagement = () => {
         } else {
           // Create new room with images
           const response = await axios.post(
-            'http://localhost:5000/api/rooms', 
+            'https://relaxee.onrender.com/api/rooms', 
             submitData,
             {
               headers: {

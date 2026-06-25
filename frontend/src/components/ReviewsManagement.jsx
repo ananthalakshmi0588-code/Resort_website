@@ -71,7 +71,7 @@ const ReviewsManagement = () => {
   const deleteReview = async (reviewId) => {
     if (window.confirm('Are you sure you want to delete this review? This action cannot be undone.')) {
       try {
-        const response = await axios.delete(`http://localhost:5000/api/reviews/${reviewId}`);
+        const response = await axios.delete(`https://relaxee.onrender.com/api/reviews/${reviewId}`);
         
         if (response.data.success) {
           setReviews(prevReviews => 

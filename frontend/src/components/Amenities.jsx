@@ -9,7 +9,7 @@ const Amenities = () => {
   useEffect(() => {
     const fetchAmenities = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/amenities');
+        const response = await axios.get('https://relaxee.onrender.com/amenities');
         if (response.data.success) {
           setAmenities(response.data.data);
         }
