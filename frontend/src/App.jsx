@@ -69,7 +69,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 // import Navbar from './components/Navbar';
 import Navbar from "./components/Navbar"
 import Home from './components/Home';
-import RoomsPage from './components/RoomsPage';
+import RoomsPage from "./components/RoomsPage";
 import Gallery from './components/Gallery';
 import Amenities from './components/Amenities';
 import Packages from './components/Packages';
