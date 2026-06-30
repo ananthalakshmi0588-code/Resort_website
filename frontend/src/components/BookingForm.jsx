@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import './BookingForm.css';
+const API_URL = import.meta.env.VITE_API_URL;
 
 const BookingForm = ({ room, package: pkg, onClose, onBookingSuccess }) => {
   const [formData, setFormData] = useState({
