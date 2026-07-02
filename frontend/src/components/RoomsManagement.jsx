@@ -40,7 +40,7 @@ const RoomsManagement = () => {
 
   const fetchRooms = async () => {
     try {
-      const response = await axios.get('https://resort-backend-oa7j.onrender.com/api/rooms');
+      const response = await axios.get('https://relaxee.onrender.com/api/rooms');
       if (response.data.success) {
         setRooms(response.data.data);
       }
@@ -133,7 +133,7 @@ const RoomsManagement = () => {
         if (editingRoom) {
           // Update room with images
           const response = await axios.put(
-            `https://resort-backend-oa7j.onrender.com/api/rooms/${editingRoom._id}`,
+            `https://relaxee.onrender.com/api/rooms/${editingRoom._id}`,
             submitData,
             {
               headers: {
@@ -171,7 +171,7 @@ const RoomsManagement = () => {
         // No images selected, use regular JSON
         if (editingRoom) {
           const response = await axios.put(
-            `https://resort-backend-oa7j.onrender.com/api/rooms/${editingRoom._id}`,
+            `https://relaxee.onrender.com/api/rooms/${editingRoom._id}`,
             formData
           );
           
@@ -184,7 +184,7 @@ const RoomsManagement = () => {
             alert('Room updated successfully!');
           }
         } else {
-          const response = await axios.post('https://resort-backend-oa7j.onrender.com/api/rooms', formData);
+          const response = await axios.post('https://relaxee.onrender.com/api/rooms', formData);
           
           if (response.data.success) {
             setRooms(prevRooms => [...prevRooms, response.data.data]);
@@ -236,7 +236,7 @@ const RoomsManagement = () => {
   const handleDelete = async (roomId) => {
     if (window.confirm('Are you sure you want to delete this room? This action cannot be undone.')) {
       try {
-        const response = await axios.delete(`https://resort-backend-oa7j.onrender.com/api/rooms/${roomId}`);
+        const response = await axios.delete(`https://relaxee.onrender.com/api/rooms/${roomId}`);
         
         if (response.data.success) {
           setRooms(prevRooms => prevRooms.filter(room => room._id !== roomId));
@@ -250,7 +250,7 @@ const RoomsManagement = () => {
 
   const toggleFeatured = async (roomId, currentlyFeatured) => {
     try {
-      const response = await axios.put(`https://resort-backend-oa7j.onrender.com/api/rooms/${roomId}`, {
+      const response = await axios.put(`https://relaxee.onrender.com/api/rooms/${roomId}`, {
         featured: !currentlyFeatured
       });
       
@@ -432,7 +432,7 @@ const RoomsManagement = () => {
                         {editingRoom.images.map((image, index) => (
                           <div key={index} className="image-preview existing">
                             <img 
-                              src={`http://localhost:5000${image}`} 
+                              src={`https://relaxee.onrender.com${image}`} 
                               alt={`Room ${index + 1}`}
                               onError={(e) => {
                                 e.target.src = 'https://via.placeholder.com/150/2c5530/white?text=Image';
@@ -491,7 +491,7 @@ const RoomsManagement = () => {
               <div className="room-image">
                 {room.images && room.images.length > 0 ? (
                   <img 
-                    src={`http://localhost:5000${room.images[0]}`}
+                    src={`https://relaxee.onrender.com${room.images[0]}`}
                     alt={room.name}
                     onError={(e) => {
                       e.target.src = 'https://via.placeholder.com/400x250/2c5530/white?text=Room+Image';

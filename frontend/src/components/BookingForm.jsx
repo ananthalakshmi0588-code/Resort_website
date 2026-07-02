@@ -37,7 +37,7 @@ const BookingForm = ({ room, package: pkg, onClose, onBookingSuccess }) => {
 
       if (isPackageBooking) {
         // Handle package booking
-        response = await axios.post('https://resort-backend-oa7j.onrender.com/api/bookings', {
+        response = await axios.post('https://relaxee.onrender.com/api/bookings', {
           guestName: formData.guestName,
           email: formData.email,
           phone: formData.phone,

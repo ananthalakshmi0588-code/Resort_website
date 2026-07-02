@@ -50,7 +50,7 @@ const RoomsPreview = () => {
             <div key={room._id} className="preview-room-card">
               <div className="room-image">
                 <img 
-                  src={`https://resort-backend-oa7j.onrender.com${room.images[0]}`}
+                  src={`https://relaxee.onrender.com${room.images[0]}`}
                   alt={room.name}
                   onError={(e) => {
                     e.target.src = 'https://via.placeholder.com/400x250/2c5530/white?text=Image+Missing';

@@ -14,7 +14,7 @@ const BookingsManagement = () => {
 
   const fetchBookings = async () => {
     try {
-      const response = await axios.get('https://resort-backend-oa7j.onrender.com/api/admin/bookings');
+      const response = await axios.get('https://relaxee.onrender.com/api/admin/bookings');
       if (response.data.success) {
         setBookings(response.data.data);
       }

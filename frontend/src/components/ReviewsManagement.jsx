@@ -11,11 +11,11 @@ const ReviewsManagement = () => {
   // FIX: Wrap fetchReviews in useCallback to make it stable
   const fetchReviews = useCallback(async () => {
     try {
-      let url = 'https://resort-backend-oa7j.onrender.com/api/admin/reviews/pending';
+      let url = 'https://relaxee.onrender.com/api/admin/reviews/pending';
       if (filter === 'approved') {
-        url = 'https://resort-backend-oa7j.onrender.com/api/reviews/approved';
+        url = 'https://relaxee.onrender.com/api/reviews/approved';
       } else if (filter === 'all') {
-        url = 'https://resort-backend-oa7j.onrender.com/api/reviews';
+        url = 'https://relaxee.onrender.com/api/reviews';
       }
 
       const response = await axios.get(url);
@@ -35,7 +35,7 @@ const ReviewsManagement = () => {
 
   const approveReview = async (reviewId) => {
     try {
-      const response = await axios.put(`https://resort-backend-oa7j.onrender.com/api/admin/reviews/${reviewId}/approve`);
+      const response = await axios.put(`https://relaxee.onrender.com/api/admin/reviews/${reviewId}/approve`);
       
       if (response.data.success) {
         // Remove from current list or update status
@@ -51,7 +51,7 @@ const ReviewsManagement = () => {
 
   const featureReview = async (reviewId) => {
     try {
-      const response = await axios.put(`https://resort-backend-oa7j.onrender.com/api/reviews/${reviewId}`, {
+      const response = await axios.put(`https://relaxee.onrender.com/api/reviews/${reviewId}`, {
         featured: true
       });
       
