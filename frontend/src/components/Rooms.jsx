@@ -62,7 +62,7 @@ const Rooms = () => {
               {room.featured && <div className="featured-badge">Featured</div>}
               
               <img 
-                src={`https://resort-backend-oa7j.onrender.com${room.images[0]}`}
+                src={`https://relaxee.onrender.com${room.images[0]}`}
                 alt={room.name}
                 onError={(e) => {
                   e.target.src = 'https://via.placeholder.com/400x250/2c5530/white?text=Image+Missing';
@@ -112,7 +112,7 @@ const Rooms = () => {
             <div className="modal-room-details">
               <div className="modal-images">
                 <img 
-                  src={`https://resort-backend-oa7j.onrender.com${selectedRoom.images[0]}`}
+                  src={`https://relaxee.onrender.com${selectedRoom.images[0]}`}
                   alt={selectedRoom.name} 
                   onError={(e) => {
                     e.target.src = 'https://via.placeholder.com/400x250/2c5530/white?text=Image+Missing';
