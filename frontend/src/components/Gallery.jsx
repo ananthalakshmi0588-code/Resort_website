@@ -1,8 +1,9 @@
+// 
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './Gallery.css';
 
-const API_URL = 'https://relaxee.onrender.com/api';
+const API_URL = import.meta.env.VITE_API_URL;
 
 const Gallery = () => {
   const [gallery, setGallery] = useState([]);
@@ -86,6 +87,10 @@ const Gallery = () => {
             <img
               src={`${API_URL}${selectedImage.imageUrl}`}
               alt={selectedImage.title}
+              onError={(e) => {
+                e.target.src =
+                  'https://via.placeholder.com/800x500?text=Image+Not+Found';
+              }}
             />
 
             <div className="modal-info">
