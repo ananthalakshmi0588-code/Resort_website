@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './Gallery.css';
 
-const API_URL = 'https://relaxee.onrender.com/api/gallery';
+const API_URL = 'https://relaxee.onrender.com';
 
 const Gallery = () => {
   const [gallery, setGallery] = useState([]);
@@ -26,6 +26,16 @@ const Gallery = () => {
 
     fetchGallery();
   }, []);
+
+  const getImageUrl = (imageUrl) => {
+    if (!imageUrl) {
+      return 'https://via.placeholder.com/600x400?text=No+Image';
+    }
+
+    return imageUrl.startsWith('http')
+      ? imageUrl
+      : `${API_URL}${imageUrl}`;
+  };
 
   const openModal = (image) => {
     setSelectedImage(image);
@@ -55,7 +65,7 @@ const Gallery = () => {
               onClick={() => openModal(item)}
             >
               <img
-                src={`${API_URL}${item.imageUrl}`}
+                src={getImageUrl(item.imageUrl)}
                 alt={item.title}
                 loading="lazy"
                 onError={(e) => {
@@ -84,8 +94,12 @@ const Gallery = () => {
             </button>
 
             <img
-              src={`${API_URL}${selectedImage.imageUrl}`}
+              src={getImageUrl(selectedImage.imageUrl)}
               alt={selectedImage.title}
+              onError={(e) => {
+                e.target.src =
+                  'https://via.placeholder.com/600x400?text=Image+Not+Found';
+              }}
             />
 
             <div className="modal-info">

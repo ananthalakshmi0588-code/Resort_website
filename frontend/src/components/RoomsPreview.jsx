@@ -49,13 +49,19 @@ const RoomsPreview = () => {
           {rooms.map(room => (
             <div key={room._id} className="preview-room-card">
               <div className="room-image">
-                <img 
-                  src={`https://relaxee.onrender.com${room.images[0]}`}
-                  alt={room.name}
-                  onError={(e) => {
-                    e.target.src = 'https://via.placeholder.com/400x250/2c5530/white?text=Image+Missing';
-                  }}
-                />
+                <img
+  src={
+    room.images?.[0]?.startsWith("http")
+      ? room.images[0]
+      : `https://relaxee.onrender.com${room.images?.[0] || ""}`
+  }
+  alt={room.name}
+  onError={(e) => {
+    console.log("Image failed:", room.images?.[0]);
+    e.target.src =
+      "https://via.placeholder.com/400x250?text=Image+Missing";
+  }}
+/>
               </div>
               
               <div className="preview-room-info">
